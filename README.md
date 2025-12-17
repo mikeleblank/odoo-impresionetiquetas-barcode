@@ -346,7 +346,7 @@ Este template:
   </t>
 </t>
 
-xml```
+.```
 
 ✅ Guardar cambios
 
