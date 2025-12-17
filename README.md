@@ -1,4 +1,4 @@
-# 🏷️ Guía PRO — Etiquetas 50×25 mm (doble) en **Odoo Online 19+ (Enterprise)** con **TSC TE200** (PDF/QWeb)
+# 🏷️ Etiquetas 50×25 mm (doble) en **Odoo Online 19+ (Enterprise)** con **TSC TE200** (PDF/QWeb)
 
 Esta guía documenta **de principio a fin** cómo dejar funcionando la impresión de etiquetas térmicas desde **Odoo Online** usando un **reporte PDF (QWeb)** y una impresora **TSC TE200**, para etiquetas **dobles**:
 
