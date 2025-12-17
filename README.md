@@ -345,3 +345,158 @@ Este template:
     </div>
   </t>
 </t>
+
+
+✅ Guardar cambios
+
+Pegá el template
+
+Clic en Guardar
+
+Reabrí el reporte para confirmar que no dio error
+
+🧪 7) Verificaciones antes de imprimir (OBLIGATORIO)
+✅ Verificar tamaño real del PDF
+
+Imprimir desde Odoo (descargar PDF)
+
+Abrir el PDF en el visor que uses
+
+Ir a Propiedades del documento
+
+Confirmar:
+
+✅ Tamaño de página: 103 × 25 mm
+❌ Si dice A4: el reporte NO está usando tu Paperformat.
+
+✅ Verificar que no se generan “2 páginas”
+
+Si te sale una segunda página en blanco:
+
+baja la altura de .label-page a 24mm
+
+o reduce padding 0.6mm 0.8mm
+
+🖨️ 8) Configurar tamaño de papel en el Driver (Windows)
+
+Esto es lo más importante: si el driver imprime como A4, vas a desperdiciar etiqueta y quedará corrido.
+
+8.1 Crear tamaño personalizado en Windows
+
+Abrir Panel de control
+
+Ir a Dispositivos e impresoras
+
+Clic derecho en TSC TE200
+
+Elegir Preferencias de impresión (o “Printing Preferences”)
+
+8.2 Definir “Papel / Tamaño”
+
+En el driver de TSC (puede variar por versión):
+
+Buscar sección Paper / Stock / Media
+
+Elegir Custom / User Defined / Personalizado
+
+Crear nuevo tamaño:
+
+Width / Ancho: 103 mm
+
+Height / Alto: 25 mm
+
+En algunos drivers lo pide en pulgadas:
+103 mm = 4.055 in
+25 mm = 0.984 in
+
+8.3 Parámetros críticos del driver
+✅ Escala
+
+Scaling / Fit to page / Ajustar: NO ❌
+
+Scale: 100% ✅
+
+✅ Orientación
+
+Horizontal ✅ (Landscape)
+
+Rotación automática: desactivada
+
+✅ Tipo de papel
+
+Tipo: Etiqueta / Label
+
+“Gap / separación”: si hay opción, indicar que hay gap (3 mm)
+
+✅ Velocidad / densidad (calidad)
+
+Densidad media/alta si barcode sale claro
+
+Velocidad media para mejor definición
+
+🧯 9) Problemas comunes (y solución directa)
+❌ Sale como A4
+
+✅ Solución:
+
+Revisar que el reporte tenga seleccionado el Paperformat 103×25
+
+Revisar que el PDF descargado sea realmente 103×25
+
+❌ Deja mucho margen o se centra
+
+✅ Causa típica:
+
+“Encogimiento inteligente / Smart shrinking” activado
+
+✅ Solución:
+
+Desactivarlo en el formato de papel
+
+❌ Sale en 2 páginas
+
+✅ Causa:
+
+wkhtmltopdf redondea mm y se pasa por 0.5mm
+
+✅ Solución:
+
+usar .label-page { height: 24.5mm }
+
+si insiste: bajar a 24mm
+
+❌ El texto desaparece
+
+✅ Causa:
+
+layouts con tablas internas de filas en mm (wkhtmltopdf lo calcula mal)
+
+✅ Solución:
+
+usar el template recomendado (divs con heights fijos)
+
+❌ Barcode deformado o muy chico
+
+✅ Solución:
+
+aumentar width y height del endpoint:
+
+width=420&height=100
+
+mantener .barcode-img con altura fija
+
+✅ Resultado esperado
+
+Cuando esté bien configurado, el resultado será:
+
+Dos etiquetas por “página” (tirada)
+
+Barcode centrado
+
+Número debajo
+
+Nombre en negrita
+
+Sin bordes
+
+Sin segunda hoja
