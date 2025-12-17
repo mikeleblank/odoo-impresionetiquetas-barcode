@@ -1,4 +1,4 @@
-# 🏷️ Guía Completa — Impresión de Etiquetas 50×25 mm en Odoo Online (Enterprise 19+)
+# 🏷️ Impresión de Etiquetas 50×25 mm en Odoo Online (Enterprise 19+)
 ### Impresora TSC TE200 · PDF · QWeb · Odoo Studio
 
 Esta guía explica **paso a paso** cómo configurar **Odoo Online (Enterprise)** para imprimir **etiquetas térmicas de productos** usando una **impresora TSC TE200**, con etiquetas **dobles 50×25 mm**, mediante **reportes PDF (QWeb)**.
